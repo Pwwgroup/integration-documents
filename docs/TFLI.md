@@ -49,10 +49,6 @@ token: 123456789
 }
 ```
 
-#### FullName rules
-
-We only support
-
 #### Valid Suppliers
 
 **<a name="gas"></a>gas**
