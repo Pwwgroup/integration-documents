@@ -12,7 +12,6 @@
 
 **Live-URL:** https://www.greenpoweradvice.co.uk/api/lead/tfli/v1
 
-**URL Prefix:** /tfli/lead
 
 **URL Params:**
 
