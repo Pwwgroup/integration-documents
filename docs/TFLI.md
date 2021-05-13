@@ -12,7 +12,6 @@
 
 **Live-URL:** https://www.greenpoweradvice.co.uk/api/lead/tfli/v1
 
-
 **URL Params:**
 
 ```JSON
@@ -163,11 +162,12 @@ token: 123456789
 ```
 
 **<a name="timeToCall"></a>Time to Call**
+
 ```JSON
 [
-  "Now", 
-  "Morning", 
-  "Afternoon", 
+  "Now",
+  "Morning",
+  "Afternoon",
   "Evening"
 ];
 ```
@@ -188,7 +188,7 @@ token: 123456789
 
 #### Status Codes
 
-**Response 201:** 
+**Response 201:**
 
 "Successful"
 
@@ -196,23 +196,29 @@ token: 123456789
 
 !!! Validation errors !!!
 
+mobile:
+
 ```JSON
 {
     "error": {
         "message": "Invalid Mobile number",
-        "body": "Must be a valid mobile phone number regex: TBC"
+        "body": "Must be a valid mobile phone number regex: /((\\+44(\\s\\(0\\)\\s|\\s0\\s|\\s)?)|0)7\\d{3}(\\s)?\\d{6}/"
     }
 }
 ```
+
+email:
 
 ```JSON
 {
     "error": {
         "message": "Invalid Email",
-        "body": "Must be a valid email regex: TBC"
+        "body": "Must be a valid email regex: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/"
     }
 }
 ```
+
+fullName:
 
 ```JSON
 {
@@ -223,6 +229,8 @@ token: 123456789
 }
 ```
 
+businessName:
+
 ```JSON
 {
     "error": {
@@ -231,6 +239,8 @@ token: 123456789
     }
 }
 ```
+
+electricitySupplier:
 
 ```JSON
 {
@@ -241,6 +251,8 @@ token: 123456789
 }
 ```
 
+gasSupplier:
+
 ```JSON
 {
     "error": {
@@ -249,6 +261,8 @@ token: 123456789
     }
 }
 ```
+
+energyType:
 
 ```JSON
 {
@@ -259,6 +273,8 @@ token: 123456789
 }
 ```
 
+businessOwner:
+
 ```JSON
 {
     "error": {
@@ -267,6 +283,8 @@ token: 123456789
     }
 }
 ```
+
+businessAddress:
 
 ```JSON
 {
@@ -277,6 +295,8 @@ token: 123456789
 }
 ```
 
+timeToCall:
+
 ```JSON
 {
     "error": {
@@ -286,13 +306,14 @@ token: 123456789
 }
 ```
 
-
 **Response 403:**
 
 ```JSON
 {
-  "error": "INVALID Token",
-  "message": "Please check you are using the correct token",
+    "error": {
+        "message": "INVALID Token",
+        "body": "Please check you are using the correct token"
+    }
 }
 ```
 
@@ -300,7 +321,10 @@ token: 123456789
 
 ```JSON
 {
-  "error": "URL Not Found"
+    "error": {
+        "message": "Not found",
+        "body": "URL not Found"
+    }
 }
 ```
 
@@ -308,8 +332,10 @@ token: 123456789
 
 ```JSON
 {
-  "error": "Method Not Allowed",
-  "message": "This endpoint only supports POST method requests",
+    "error": {
+        "message": "Method Not Allowed",
+        "body": "This endpoint does not support {METHOD} method requests"
+    }
 }
 ```
 

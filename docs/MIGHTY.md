@@ -396,8 +396,10 @@ electricitySpend
 
 ```JSON
 {
-  "error": "INVALID Token",
-  "message": "Please check you are using the correct token",
+    "error": {
+        "message": "INVALID Token",
+        "body": "Please check you are using the correct token"
+    }
 }
 ```
 
@@ -405,7 +407,10 @@ electricitySpend
 
 ```JSON
 {
-  "error": "URL Not Found"
+    "error": {
+        "message": "Not found",
+        "body": "URL not Found"
+    }
 }
 ```
 
@@ -413,8 +418,10 @@ electricitySpend
 
 ```JSON
 {
-  "error": "Method Not Allowed",
-  "message": "This endpoint only supports POST method requests",
+    "error": {
+        "message": "Method Not Allowed",
+        "body": "This endpoint does not support {METHOD} method requests"
+    }
 }
 ```
 
